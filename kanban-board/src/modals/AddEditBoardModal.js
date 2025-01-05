@@ -88,7 +88,7 @@ function AddEditBoardModal({ setIsBoardModalOpen, type , }) {
             Board Name
           </label>
           <input
-            className=" bg-transparent  px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-1  ring-0  "
+            className=" bg-transparent  px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#71de99] outline-1  ring-0  "
             placeholder=" e.g Web Design"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -106,7 +106,7 @@ function AddEditBoardModal({ setIsBoardModalOpen, type , }) {
           {newColumns.map((column, index) => (
             <div key={index} className=" flex items-center w-full ">
               <input
-                className=" bg-transparent flex-grow px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-[1px]  "
+                className=" bg-transparent flex-grow px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#71de99] outline-[1px]  "
                 onChange={(e) => {
                   onChange(column.id, e.target.value);
                 }}
@@ -124,7 +124,7 @@ function AddEditBoardModal({ setIsBoardModalOpen, type , }) {
           ))}
           <div>
             <button
-              className=" w-full items-center hover:opacity-70 dark:text-[#635fc7] dark:bg-white  text-white bg-[#635fc7] py-2 rounded-full "
+              className=" w-full items-center hover:opacity-70 dark:text-[#71de99] dark:bg-white  text-white bg-[#71de99] py-2 rounded-full "
               onClick={() => {
                 setNewColumns((state) => [
                   ...state,
@@ -139,7 +139,7 @@ function AddEditBoardModal({ setIsBoardModalOpen, type , }) {
                 const isValid = validate();
                 if (isValid === true) onSubmit(type);
               }}
-              className=" w-full items-center hover:opacity-70 dark:text-white dark:bg-[#635fc7] mt-8 relative  text-white bg-[#635fc7] py-2 rounded-full"
+              className=" w-full items-center hover:opacity-70 dark:text-white dark:bg-[#71de99] mt-8 relative  text-white bg-[#71de99] py-2 rounded-full"
             >
               {type === "add" ? "Create New Board" : "Save Changes"}
             </button>

@@ -135,7 +135,7 @@ function AddEditTaskModal({
             onChange={(e) => setTitle(e.target.value)}
             id="task-name-input"
             type="text"
-            className=" bg-transparent  px-4 py-2 outline-none focus:border-0 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-1  ring-0  "
+            className=" bg-transparent  px-4 py-2 outline-none focus:border-0 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#71de99] outline-1  ring-0  "
             placeholder=" e.g Take coffee break"
           />
         </div>
@@ -149,7 +149,7 @@ function AddEditTaskModal({
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             id="task-description-input"
-            className=" bg-transparent outline-none min-h-[200px] focus:border-0 px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-[1px] "
+            className=" bg-transparent outline-none min-h-[200px] focus:border-0 px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#71de99] outline-[1px] "
             placeholder="e.g. It's always good to take a break. This 
             15 minute break will  recharge the batteries 
             a little."
@@ -171,7 +171,7 @@ function AddEditTaskModal({
                 }}
                 type="text"
                 value={subtask.title}
-                className=" bg-transparent outline-none focus:border-0 flex-grow px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-[1px]  "
+                className=" bg-transparent outline-none focus:border-0 flex-grow px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#71de99] outline-[1px]  "
                 placeholder=" e.g Take coffee break"
               />
               <img
@@ -185,7 +185,7 @@ function AddEditTaskModal({
           ))}
 
           <button
-            className=" w-full items-center dark:text-[#635fc7] dark:bg-white  text-white bg-[#635fc7] py-2 rounded-full "
+            className=" w-full items-center dark:text-[#71de99] dark:bg-white  text-white bg-[#71de99] py-2 rounded-full "
             onClick={() => {
               setSubtasks((state) => [
                 ...state,
@@ -205,7 +205,7 @@ function AddEditTaskModal({
           <select
             value={status}
             onChange={onChangeStatus}
-            className=" select-status flex-grow px-4 py-2 rounded-md text-sm bg-transparent focus:border-0  border-[1px] border-gray-300 focus:outline-[#635fc7] outline-none"
+            className=" select-status flex-grow px-4 py-2 rounded-md text-sm bg-transparent focus:border-0  border-[1px] border-gray-300 focus:outline-[#71de99] outline-none"
           >
             {columns.map((column, index) => (
               <option key={index}>{column.name}</option>
@@ -220,7 +220,7 @@ function AddEditTaskModal({
                 type === "edit" && setIsTaskModalOpen(false);
               }
             }}
-            className=" w-full items-center text-white bg-[#635fc7] py-2 rounded-full "
+            className=" w-full items-center text-white bg-[#71de99] py-2 rounded-full "
           >
            {type === "edit" ? " save edit" : "Create task"}
           </button>

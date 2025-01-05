@@ -44,7 +44,7 @@ function HeaderDropDown({ setOpenDropdown, setIsBoardModalOpen }) {
             <div
               className={` flex items-baseline space-x-2 px-5 py-4  ${
                 board.isActive &&
-                " bg-[#635fc7] rounded-r-full text-white mr-8 "
+                " bg-[#71de99] rounded-r-full text-white mr-8 "
               } `}
               key={index}
               onClick={() => {
@@ -61,7 +61,7 @@ function HeaderDropDown({ setOpenDropdown, setIsBoardModalOpen }) {
             setIsBoardModalOpen(true);
             setOpenDropdown(false)
           }}
-          className=" flex items-baseline space-x-2  text-[#635fc7] px-5 py-4  ">
+          className=" flex items-baseline space-x-2  text-[#71de99] px-5 py-4  ">
             <img src={boardIcon} className="   filter-white  h-4 " />
             <p className=" text-lg font-bold  ">Create New Board </p>
           </div>
@@ -73,7 +73,7 @@ function HeaderDropDown({ setOpenDropdown, setIsBoardModalOpen }) {
               checked={darkSide}
               onChange={toggleDarkMode}
               className={`${
-                darkSide ? "bg-[#635fc7]" : "bg-gray-200"
+                darkSide ? "bg-[#71de99]" : "bg-gray-200"
               } relative inline-flex h-6 w-11 items-center rounded-full`}
             >
               <span className="sr-only">Enable notifications</span>

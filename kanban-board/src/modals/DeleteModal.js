@@ -41,7 +41,7 @@ function DeleteModal({ type, title, onDeleteBtnClick, setIsDeleteModalOpen }) {
             onClick={() => {
               setIsDeleteModalOpen(false)
             }}
-            className="w-full items-center text-[#635fc7] dark:bg-white hover:opacity-75 bg-[#635fc71a]  py-2 rounded-full"
+            className="w-full items-center text-[#71de99] dark:bg-white hover:opacity-75 bg-[#71de991a]  py-2 rounded-full"
           >
             Cancel
           </button>

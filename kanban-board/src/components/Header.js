@@ -19,7 +19,6 @@ function Header({ setIsBoardModalOpen, isBoardModalOpen }) {
   const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-  
   const boards = useSelector((state) => state.boards);
   const board = boards.find((board) => board.isActive);
 
@@ -49,56 +48,48 @@ function Header({ setIsBoardModalOpen, isBoardModalOpen }) {
   };
 
   return (
-    <div className=" p-4 fixed left-0 bg-white dark:bg-[#2b2c37] z-50 right-0 ">
-      <header className=" flex justify-between dark:text-white items-center  ">
-        {/* Left Side  */}
-        <div className=" flex items-center space-x-2  md:space-x-4">
-          <img src={Logo} alt=" Logo " className=" h-6 w-6" />
-          <h3 className=" md:text-4xl  hidden md:inline-block font-bold  font-sans">
-            kanban
-          </h3>
-          <div className=" flex items-center ">
-            <h3 className=" truncate max-w-[200px] md:text-2xl text-xl font-bold md:ml-20 font-sans  ">
-              {board.name}
+    <div className="p-4 fixed left-0 right-0 bg-white dark:bg-[#2b2c37] z-50 shadow-md">
+      <header className="flex justify-between items-center">
+        {/* Left Side */}
+        <div className="flex items-center space-x-4">
+          <img src={Logo} alt="Logo" className="h-8 w-8" />
+          <h3 className="text-xl font-bold hidden md:block">Kanban</h3>
+          <div className="flex items-center">
+            <h3 className="text-lg font-semibold truncate max-w-[200px]">
+              {board?.name || "Select Board"}
             </h3>
             <img
               src={openDropdown ? iconUp : iconDown}
-              alt=" dropdown icon"
-              className=" w-3 ml-2 md:hidden"
+              alt="Toggle Dropdown"
+              className="w-4 ml-2 cursor-pointer"
               onClick={onDropdownClick}
             />
           </div>
         </div>
 
         {/* Right Side */}
-
-        <div className=" flex space-x-4 items-center md:space-x-6 ">
-          <button
-            className=" button hidden md:block "
-            onClick={() => {
-              setIsTaskModalOpen((prevState) => !prevState);
-            }}
-          >
-            + Add New Task
-          </button>
-          <button
-            onClick={() => {
-              setIsTaskModalOpen((prevState) => !prevState);
-            }}
-            className=" button py-1 px-3 md:hidden "
-          >
-            +
-          </button>
-
+        <div className="flex items-center space-x-4">
+        <button
+  className="hidden md:block px-4 py-2 bg-green-600 text-white rounded-lg shadow-sm hover:bg-green-700 transition"
+  onClick={() => setIsTaskModalOpen(true)}
+>
+  + Add New Task
+</button>
+<button
+  className="md:hidden px-3 py-2 bg-green-600 text-white rounded-full shadow-sm hover:bg-green-700 transition"
+  onClick={() => setIsTaskModalOpen(true)}
+>
+  +
+</button>
           <img
+            src={elipsis}
+            alt="Menu"
+            className="cursor-pointer h-6"
             onClick={() => {
               setBoardType("edit");
-              setOpenDropdown(false)
+              setOpenDropdown(false);
               setIsElipsisMenuOpen((prevState) => !prevState);
             }}
-            src={elipsis}
-            alt="elipsis"
-            className=" cursor-pointer h-6"
           />
           {isElipsisMenuOpen && (
             <ElipsisMenu
@@ -108,14 +99,15 @@ function Header({ setIsBoardModalOpen, isBoardModalOpen }) {
             />
           )}
         </div>
-
-        {openDropdown && (
-          <HeaderDropDown
-            setOpenDropdown={setOpenDropdown}
-            setIsBoardModalOpen={setIsBoardModalOpen}
-          />
-        )}
       </header>
+
+      {openDropdown && (
+        <HeaderDropDown
+          setOpenDropdown={setOpenDropdown}
+          setIsBoardModalOpen={setIsBoardModalOpen}
+        />
+      )}
+
       {isTaskModalOpen && (
         <AddEditTaskModal
           setIsAddTaskModalOpen={setIsTaskModalOpen}
@@ -131,11 +123,12 @@ function Header({ setIsBoardModalOpen, isBoardModalOpen }) {
           setIsBoardModalOpen={setIsBoardModalOpen}
         />
       )}
+
       {isDeleteModalOpen && (
         <DeleteModal
           setIsDeleteModalOpen={setIsDeleteModalOpen}
           type="board"
-          title={board.name}
+          title={board?.name}
           onDeleteBtnClick={onDeleteBtnClick}
         />
       )}
